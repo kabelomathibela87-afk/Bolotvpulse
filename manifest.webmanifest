@@ -1,0 +1,23 @@
+{
+  "id": "/",
+  "name": "Bolo TV – News, Sport & Entertainment",
+  "short_name": "Bolo TV",
+  "description": "Breaking news, sport, music and culture from Afrikabelo and Bolo TV Pulse, in one app.",
+  "start_url": "./?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000C1A",
+  "theme_color": "#000C1A",
+  "lang": "en-ZA",
+  "categories": ["news", "entertainment", "sports"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Afrikabelo", "url": "./?tab=afrikabelo", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Bolo TV Pulse", "url": "./?tab=pulse", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

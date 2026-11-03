@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<title>Bolo TV – News, Sport & Entertainment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Breaking news, sport, music and culture from Afrikabelo and Bolo TV Pulse, in one app.">
+<meta name="theme-color" content="#000C1A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Bolo TV">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <img src="icons/icon-192.png" alt="" class="brand-logo" width="36" height="36">
+    <div>
+      <div class="brand-name">Bolo <span>TV</span></div>
+      <div class="brand-sub" id="subtitle">News · Sport · Culture</div>
+    </div>
+  </div>
+  <div class="top-actions">
+    <button class="install-fab" id="installFab"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Install</button>
+    <button class="icon-btn" id="searchBtn" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></button>
+    <button class="icon-btn" id="infoBtn" aria-label="About"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></button>
+  </div>
+</header>
+
+<div class="searchbar" id="searchbar" hidden>
+  <input id="searchInput" type="search" placeholder="Search stories…" autocomplete="off">
+  <button class="text-btn" id="searchClose">Cancel</button>
+</div>
+
+
+<div class="chips" id="chips" role="tablist" aria-label="Categories"></div>
+
+<main id="main" aria-live="polite">
+  <div id="hero"></div>
+  <div id="list" class="list"></div>
+  <div class="more-wrap"><button id="moreBtn" class="more-btn" hidden>Load more stories</button></div>
+  <div id="status" class="status"></div>
+  <footer class="brandfoot"><img src="assets/kutullo-logo.jpg" alt="Kutullo Angel Media" width="230" height="230"><div>A Kutullo Angel Media production</div></footer>
+</main>
+
+<nav class="tabbar" id="tabbar">
+  <button data-tab="home" class="active"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg><span>Home</span></button>
+  <button data-tab="afrikabelo"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg><span>Afrikabelo</span></button>
+  <button data-tab="pulse"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg><span>Pulse</span></button>
+  <button data-tab="saved"><svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 011 1v17l-7-4-7 4V4a1 1 0 011-1z"/></svg><span>Saved</span></button>
+</nav>
+
+<!-- Article reader -->
+<section class="reader" id="reader" hidden aria-modal="true" role="dialog">
+  <div class="reader-bar">
+    <button class="icon-btn" id="readerBack" aria-label="Back"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="reader-src" id="readerSrc"></div>
+    <button class="icon-btn" id="readerSave" aria-label="Save"><svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 011 1v17l-7-4-7 4V4a1 1 0 011-1z"/></svg></button>
+    <button class="icon-btn" id="readerShare" aria-label="Share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4"/></svg></button>
+  </div>
+  <article class="reader-body" id="readerBody"></article>
+</section>
+
+<!-- About sheet -->
+<section class="sheet" id="sheet" hidden>
+  <div class="sheet-card">
+    <div class="sheet-head">
+      <img src="icons/icon-192.png" alt="" width="52" height="52">
+      <div><h2>Bolo TV</h2><p>Your home for South African news, sport &amp; entertainment.</p></div>
+    </div>
+    <div class="sheet-by"><img src="assets/kutullo-logo.jpg" alt=""><div><b>Kutullo Angel Media</b>Reveal. Inspire. Impact.<br>Rooted in Africa. Guided by Revelation.</div></div>
+    <div class="sheet-links">
+      <a href="https://afrikabelo.blogspot.com/" target="_blank" rel="noopener">Afrikabelo website</a>
+      <a href="https://bolotvpulse.blogspot.com/" target="_blank" rel="noopener">Bolo TV Pulse website</a>
+      <a href="https://afrikabelo.blogspot.com/p/bolo-tv-web-version.html" target="_blank" rel="noopener">Bolo TV web version</a>
+      <a href="https://www.facebook.com/profile.php?id=61584884354809" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.youtube.com/@bolotv2000s" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://x.com/LephikaRCOS" target="_blank" rel="noopener">X (Twitter)</a>
+      <a href="https://afrikabelo.blogspot.com/p/contact-us.html" target="_blank" rel="noopener">Contact us</a>
+      <a href="https://afrikabelo.blogspot.com/p/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a>
+    </div>
+    <button class="primary" id="sheetClose">Close</button>
+  </div>
+</section>
+
+<!-- Install popup -->
+<section class="install" id="install" hidden role="dialog" aria-modal="true" aria-labelledby="installTitle">
+  <div class="install-card">
+    <img class="app" src="icons/icon-192.png" alt="" width="84" height="84">
+    <h2 id="installTitle">Get the Bolo TV app</h2>
+    <p>Install Bolo TV on your phone for one-tap access to Afrikabelo and Bolo TV Pulse.</p>
+    <div class="install-perks"><span>Fast</span><span>Works offline</span><span>Free</span></div>
+    <ol class="install-steps" id="installSteps"></ol>
+    <button class="primary" id="installNow">Install app</button>
+    <button class="install-later" id="installLater">Not now</button>
+  </div>
+</section>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
